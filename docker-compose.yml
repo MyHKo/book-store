@@ -5,7 +5,7 @@ services:
     image: book-store-front:latest
     working_dir: /store-frontend
     volumes:
-      - ./frontend:/store-frontend
+      - ./store-frontend:/store-frontend
     ports:
       - "3000:3000"
     depends_on:
@@ -16,7 +16,7 @@ services:
     image: book-store-back:latest
     working_dir: /store-backend
     volumes: 
-      - ./backend:/store-backend
+      - ./store-backend:/store-backend
     ports: 
       - "8080:8080"
     networks:
