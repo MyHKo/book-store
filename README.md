@@ -1,6 +1,9 @@
 Web application of a book store. 
 Consists of frontend and backend parts
-To run, use
-- docker build -t book-store-front . in frontend dir
-- docker build -t book-store-back . in backend dir
-- docker-compose up -d in root dir
+
+- Backend part is made using SpringBoot
+
+- Frontend is made using React
+
+To run, cd to project directory and run:
+docker-compose up -d 
