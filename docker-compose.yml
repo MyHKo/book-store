@@ -4,6 +4,8 @@ services:
   database:
     image: mysql:9.2.0-oracle
     working_dir: /database
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - /database:/var/lib/mysql
     ports:
@@ -35,3 +37,5 @@ services:
 
 networks:
   bookStoreNetwork:
+volumes:
+  bookStoreVolume:
