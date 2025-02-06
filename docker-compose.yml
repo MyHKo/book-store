@@ -17,6 +17,10 @@ services:
     image: book-store-back:latest
     build: ./store-backend
     working_dir: /store-backend
+    environment:
+      DB_URL:
+      DB_USER:
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports: 
       - "8080:8080"
     networks:
