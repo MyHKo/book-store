@@ -7,7 +7,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - /database:/var/lib/mysql
+      - databaseVolume:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
@@ -38,4 +38,4 @@ services:
 networks:
   bookStoreNetwork:
 volumes:
-  bookStoreVolume:
+  databaseVolume:
