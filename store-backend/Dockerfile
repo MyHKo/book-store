@@ -1,6 +1,6 @@
 FROM maven:3.9.9-sapmachine-21
 
-WORKDIR /app
+WORKDIR /store-backend
 
 COPY . .
 

@@ -1,16 +1,13 @@
 version: "3.9"
 
 services:
-  frontend:
-    image: book-store-front:latest
-    build: ./store-frontend
-    working_dir: /store-frontend
+  database:
+    image: mysql:9.2.0-oracle
+    working_dir: /database
     volumes:
-      - ./store-frontend:/store-frontend
+      - /database:/var/lib/mysql
     ports:
-      - "3000:3000"
-    depends_on:
-      - backend
+      - "3306:3306"
     networks:
       - bookStoreNetwork
 
@@ -18,10 +15,21 @@ services:
     image: book-store-back:latest
     build: ./store-backend
     working_dir: /store-backend
-    volumes: 
-      - ./store-backend:/store-backend
     ports: 
       - "8080:8080"
+    networks:
+      - bookStoreNetwork
+    depends_on:
+      - database
+
+  frontend:
+    image: book-store-front:latest
+    build: ./store-frontend
+    working_dir: /store-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
     networks:
       - bookStoreNetwork
 
